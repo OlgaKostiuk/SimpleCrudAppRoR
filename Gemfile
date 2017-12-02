@@ -27,6 +27,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
+gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'bootstrap-datepicker-rails', '~> 1.7', '>= 1.7.1.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

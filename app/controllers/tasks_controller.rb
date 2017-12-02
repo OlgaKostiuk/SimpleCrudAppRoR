@@ -1,7 +1,10 @@
 class TasksController < ApplicationController
   def index
     @tasks = current_user.tasks.all
-    render 'tasks/index'
+    respond_to do |format|
+      format.html{render 'tasks/index'}
+      format.json{render :json => {tasks: @tasks}}
+    end
   end
 
   def create
@@ -32,11 +35,12 @@ class TasksController < ApplicationController
     redirect_to '/'
   end
 
-  def task_create_params
-    params.require(:task).permit(:name, :description)
+  def task_update_params
+    params.require(:task).permit(:name, :description, :importance, :expiry)
   end
 
-  def task_update_params
-    params.require(:task).permit(:name, :description)
+
+  def task_create_params
+    params.require(:task).permit(:name, :description, :importance, :expiry)
   end
 end
