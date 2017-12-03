@@ -12,13 +12,6 @@ class TasksController < ApplicationController
     redirect_to '/'
   end
 
-  def edit
-    @task = current_user.tasks.find_by(id: params[:id])
-    unless @task
-      redirect_to '/'
-    end
-  end
-
   def update
     task = current_user.tasks.find_by(id: params[:id])
     if task && params[:task]
@@ -33,6 +26,13 @@ class TasksController < ApplicationController
       task.destroy!
     end
     redirect_to '/'
+  end
+
+  def edit
+    @task = current_user.tasks.find_by(id: params[:id])
+    unless @task
+      redirect_to '/'
+    end
   end
 
   def task_update_params
