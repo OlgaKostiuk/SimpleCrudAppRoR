@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  name: "name"
+  description: "description"
+  importance: "importance"
+  save: "save"
+  new_task: "New task"

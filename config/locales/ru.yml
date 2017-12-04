@@ -1,0 +1,7 @@
+ru:
+  hello: "Привет мир"
+  name: "название"
+  description: "описание"
+  importance: "важность"
+  save: "сохранить"
+  new_task: "Новая задача"

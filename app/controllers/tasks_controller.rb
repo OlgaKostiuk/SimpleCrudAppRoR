@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-    @tasks = current_user.tasks.all
+    @tasks = current_user.tasks.order("importance ASC").all
     respond_to do |format|
       format.html{render 'tasks/index'}
       format.json{render :json => {tasks: @tasks}}
@@ -36,11 +36,11 @@ class TasksController < ApplicationController
   end
 
   def task_update_params
-    params.require(:task).permit(:name, :description, :importance, :expiry)
+    params.require(:task).permit(:name, :description, :importance, :expiry, :done)
   end
 
 
   def task_create_params
-    params.require(:task).permit(:name, :description, :importance, :expiry)
+    params.require(:task).permit(:name, :description, :importance, :expiry, :done)
   end
 end

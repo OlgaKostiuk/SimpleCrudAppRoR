@@ -1,8 +1,9 @@
 <div>
-  <%= link_to 'New task', 'tasks/new'%>
+  <%= link_to t('new_task'), 'tasks/new' %>
   <% @tasks.each do |task| %>
       <div>
         <%= task.name %>
+        <td><%= task.done %></td>
         <%= link_to 'update task', edit_task_path(id: task.id)%>
         <%= link_to 'delete task', delete_task_path(id: task.id), method: :delete %>
       </div>

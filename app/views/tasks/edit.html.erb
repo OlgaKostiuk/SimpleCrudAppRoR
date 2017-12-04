@@ -4,6 +4,7 @@
     <%= f.text_field :description, value: @task.description %>
     <%= f.text_field :importance, placeholder: 'importance' %>
     <%= f.date_select :expiry, order: [:day, :month, :year] %>
+    <%= f.check_box :done %>
     <%= f.submit "save" %>
 <% end %>
 <%= link_to'Back', '/' %>
