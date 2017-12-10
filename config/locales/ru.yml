@@ -5,3 +5,6 @@ ru:
   importance: "важность"
   save: "сохранить"
   new_task: "Новая задача"
+  update_task: "изменить"
+  delete_task: "удалить"
+  delete_task: "удалить"

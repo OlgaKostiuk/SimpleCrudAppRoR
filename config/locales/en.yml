@@ -36,3 +36,5 @@ en:
   importance: "importance"
   save: "save"
   new_task: "New task"
+  update_task: "update"
+  delete_task: "delete"

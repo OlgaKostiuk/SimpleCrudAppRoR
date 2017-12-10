@@ -1,11 +1,33 @@
-<div>
-  <%= link_to t('new_task'), 'tasks/new' %>
-  <% @tasks.each do |task| %>
-      <div>
-        <%= task.name %>
-        <td><%= task.done %></td>
-        <%= link_to 'update task', edit_task_path(id: task.id)%>
-        <%= link_to 'delete task', delete_task_path(id: task.id), method: :delete %>
-      </div>
-  <% end %>
-</div>
+<!--<div>-->
+  <!--<%= link_to t('new_task'), 'tasks/new' %>-->
+  <!--<% @tasks.each do |task| %>-->
+      <!--<div>-->
+        <!--<%= task.name %>-->
+        <!--<td><%= task.done %></td>-->
+        <!--<%= link_to 'update task', edit_task_path(id: task.id)%>-->
+        <!--<%= link_to 'delete task', delete_task_path(id: task.id), method: :delete %>-->
+      <!--</div>-->
+  <!--<% end %>-->
+<!--</div>-->
+
+<%= link_to t('new_task'), 'tasks/new' %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Done</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+<% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.name %><td>
+        <%= task.done %>
+        <td><%= link_to t('update_task'), edit_task_path(id: task.id)%></td>
+        <td><%= link_to t('delete_task'), delete_task_path(id: task.id), method: :delete %></td>
+      </tr>
+<% end %>
+  </tbody>
+</table>
